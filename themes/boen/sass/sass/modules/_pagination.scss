@@ -1,0 +1,50 @@
+/* Pagination
+****************************************************/
+.navigation {
+    margin-top: 100px;
+    text-align: center;
+    li {
+        display: inline;
+    }
+    li a, li a:hover, li.active a, li.disabled {
+        padding: 12px;
+        padding: .75rem;
+        border-radius: 10px;
+        background-color: #FFF;
+        box-shadow: 1px 1px 1px #B6B6B6;
+        color: $darkgrey;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    li a:hover, li.active a {
+        background-color: $darkgrey ;
+        color: #FFF;
+    }
+    .fa {
+      margin: 0 5px;
+    }
+    .row > div {
+      margin-bottom: 1em;
+    }
+}
+/* Tablet ***************************************************************/
+@include tablet {
+  
+  .navigation {
+    text-align: left;
+    .row > div {
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+  
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+} //end tablet-landscape
+
+/* Desktop ******************************************************/
+@include desktop {
+} //end desktop

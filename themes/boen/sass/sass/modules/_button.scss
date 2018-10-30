@@ -1,0 +1,72 @@
+/* Button
+****************************************************/
+%btn {
+    @include popout-hover;
+    @include font-smoothing;
+    background: $red;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 6px 20px;
+    text-align: center;
+    color: white;
+    &:hover, &:focus {
+        color: white;
+    }
+}
+.button {
+    &--red--resource, &--red--donate {
+        @extend %btn;
+    }
+    &--red--donate { 
+        padding: 6px 15px;
+        float: left;
+        text-transform: uppercase;
+        margin-top: 6px;
+        margin-left: 8px;
+    }
+    &--red--resource {
+        display: block;
+        width: 173px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Tablet ***************************************************************/
+@include tablet {
+    .button {
+        &--red--resource {
+            margin-bottom: 35px;
+            margin-top: 15px;
+        }
+        &--red--donate { 
+            top: 16px;
+            right:0;
+            position: absolute;
+            padding: 6px 20px;
+        }
+    }
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+    .button {
+        &--red--donate {
+          top: 26px;
+        }
+        &--red--resource {
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+    }
+} //end tablet-landscape
+
+/* Desktop ******************************************************/
+@include desktop {
+} //end desktop
+
+    

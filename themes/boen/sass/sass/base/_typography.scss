@@ -1,0 +1,140 @@
+//fonts
+$font-body: 'Open Sans', sans-serif;
+$font-header: 'Open Sans', sans-serif;
+
+//base typography
+a {
+    color: darken($green,10);
+    &:hover, &:focus {
+        color: $green;
+        text-decoration: none;
+    }
+}
+.entry, .post {
+    a {
+        transition: all ease-out .25s;
+        &:hover, &:focus {
+            transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
+            box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba($green, 1);
+            text-decoration: none;
+        }
+    }
+}
+p {
+    margin-bottom: 15px;
+}
+
+blockquote {
+    margin: 15px 0;
+    padding: 15px 0 20px 20px;
+    border-left: 5px solid $green;
+    p {
+        font: italic 25px/30px $font-header;
+        color: rgba($black, .9);
+    }
+}
+.serif {
+    font-family: $font-header;
+}
+h1, h2, h3, h4, h5, h6 {
+    @include font-smoothing;
+    margin: 30px 0 15px;
+    color: $primary-color;
+    font-weight: $bold;
+    font-family: $font-header;
+}
+h1 {
+    margin: 0;
+}
+h2 {
+    margin-top: 5px;
+}
+h6 {
+    text-transform: uppercase;
+}
+
+
+
+//
+// responsive font sizing
+//
+
+// These values are the minimum and maximum viewport sizes to apply the font scaling
+$min_width: 320;
+$max_width: 1200;
+
+// These values represent the range of fon-tsize to apply  
+// These values effect the base font-size, headings and other elements will scale proportionally
+$min_font: 14;
+$max_font: 18;
+$min_h1: 36;
+$max_h1: 44;
+$min_h2: 32;
+$max_h2: 40;
+$min_h3: 24;
+$max_h3: 32;
+$min_h4: 22;
+$max_h4: 28;
+$min_h5: 16;
+$max_h5: 20;
+$min_h6: 14;
+$max_h6: 18;
+
+body, p, li, ul, .wp-caption-text, .maincontent, a, .link {
+    font-size: #{$min_font}px;
+}
+
+//line height
+body, p, li, ul, .wp-caption-text, .maincontent, a, .link, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+}
+
+//min width sizes
+@media (min-width: #{$min_width}px) and (max-width: #{$max_width}px) {
+    body, p, li, ul, .wp-caption-text, .maincontent, a, .link {
+        font-size: calc( #{$min_font}px + (#{$max_font} - #{$min_font}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+    }
+    h1 {
+        font-size: calc( #{$min_h1}px + (#{$max_h1} - #{$min_h1}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+    }
+    h2 {
+        font-size: calc( #{$min_h2}px + (#{$max_h2} - #{$min_h2}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+    }
+    h3 {
+        font-size: calc( #{$min_h3}px + (#{$max_h3} - #{$min_h3}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+    }
+    h4 {
+        font-size: calc( #{$min_h4}px + (#{$max_h4} - #{$min_h4}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+    }
+    h5 {
+        font-size: calc( #{$min_h5}px + (#{$max_h5} - #{$min_h5}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+    }
+    h6 {
+        font-size: calc( #{$min_h6}px + (#{$max_h6} - #{$min_h6}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+    }
+}
+
+// max width sizes
+@media (min-width: #{$max_width}px) {
+    body, p, li, ul, .wp-caption-text, .maincontent, a, .link {
+        font-size: #{$max_font}px;
+    }
+    h1 {
+        font-size: #{$max_h1}px;
+    }
+    h2 {
+        font-size: #{$max_h2}px;
+    }
+    h3 {
+        font-size: #{$max_h3}px;
+    }
+    h4 {
+        font-size: #{$max_h4}px;
+    }
+    h5 {
+        font-size: #{$max_h5}px;
+    }
+    h6 {
+        font-size: #{$max_h6}px;
+    }
+}

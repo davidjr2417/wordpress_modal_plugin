@@ -1,0 +1,115 @@
+/*
+	= General	
+*******************************************************************************************/
+
+html {
+    overflow-x: hidden;
+}
+body {
+    overflow: hidden;
+}
+.container, #tribe-events-pg-template {
+    max-width: 1140px;
+    width: 100%;
+}
+body {
+    padding-bottom: 0;
+    background-color: #FFF;
+    color: $primary-color;
+    font: $regular 15px/130% $font-body;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.strong {
+    font-weight: 600;
+}
+.no-gutter > [class*='col-'], .no-padding {
+    padding-right: 0;
+    padding-left: 0;
+}
+.wp-caption {
+    max-width: 100%;
+    background-color: #FDFDFD;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .wp-caption-text {
+        margin: 10px 0;
+        color: rgba($primary-color, .7);
+        font-weight: bold;
+        font-size: 12px;
+    }
+}
+.alignleft {
+    float: left;
+    margin-right: 30px;
+}
+.aligncenter {
+    display: block;
+    margin: 15px auto;
+}
+.alignright {
+    float: right;
+    margin-left: 30px;
+}
+input[type='submit'] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+}
+
+ul {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    list-style-type: disc;
+    ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+        list-style-type: circle;
+        ul {
+            list-style-type: circle;
+        }
+    }
+}
+ol {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    list-style-type: decimal;
+    ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+        list-style-type: disc;
+        ul {
+            list-style-type: circle;
+        }
+    }
+    ol {
+        padding-left: 20px;
+    }
+}
+.btn {
+    @include font-smoothing;
+    @include btn-hover;
+    padding: 8px 10px 5px;
+    border-radius: 0;
+    background-color: $green;
+    color: #FFF;
+    text-transform: lowercase;
+    font-weight: 800;
+}
+::selection {
+    background-color: rgba($green, .5);
+}
+/* Tablet ***************************************************************/
+@include tablet {
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+} //end tablet-landscape
+
+/* Desktop ******************************************************/
+@include desktop {
+} //end desktop

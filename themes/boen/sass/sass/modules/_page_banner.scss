@@ -1,0 +1,28 @@
+/* Page Banner
+****************************************************/
+.page-banner {
+    background: $green no-repeat center center;
+    background-size: cover;
+    position: relative;
+    box-shadow: inset 20px -40px 200px rgba(0, 0, 0, 0.80);
+    &__title {
+    	color: 	white;
+    	margin-top: 0;
+    	text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.50);
+    }
+}
+
+
+/* Tablet ***************************************************************/
+@include tablet {
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+} //end tablet-landscape
+
+/* Desktop ******************************************************/
+@include desktop {
+} //end desktop
+
+    

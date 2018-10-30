@@ -1,0 +1,262 @@
+/*
+	= Main Menu	
+*******************************************************************************************/
+
+.menu-collapser {
+    display: none!important;
+}
+.navbar-collapse {
+    border-top: 0;
+    box-shadow: 0 0 0 0;
+}
+.navbar-toggle {
+    border: 2px solid grey;
+    border-radius: 100px;
+    .icon-bar {
+        width: 19px;
+        height: 3px;
+        background-color: $lightgrey;
+        padding: 0;
+    }
+    /* BG: */
+}
+.menu-main-menu-container {
+    padding-bottom: 10px;
+}
+.navbar-header {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+ul.slimmenu {
+    display: block!important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    li {
+        position: relative;
+        display: inline-block;
+        a {
+            @include font-smoothing;
+            display: block;
+            padding: 12px 64px 12px 16px;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 16px;
+            -webkit-transition: background-color .5s ease-out;
+               -moz-transition: background-color .5s ease-out;
+                 -o-transition: background-color .5s ease-out;
+                    transition: background-color .5s ease-out;
+            &:hover {
+                background-color: #999;
+                text-decoration: none;
+            }
+        }
+        .sub-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 999;
+            width: 40px;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba($green, .75);
+            text-align: center;
+            cursor: pointer;
+            transition: all ease-out .2s;
+            &:before {
+                display: inline-block;
+                margin-right: -.25em;
+                height: 100%;
+                content: '';
+                vertical-align: middle;
+            }
+            > i {
+                display: inline-block;
+                padding-left: 3px;
+                vertical-align: middle;
+                font-style: normal;
+                font-size: 18px;
+            }
+        }
+        .sub-toggle.expanded {
+            border: 2px solid rgba($green, .75);
+            background: $black;
+            i {
+                color: $green;
+            }
+        }
+        > ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+            display: none;
+            width: 100%;
+            > li ul {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                z-index: 999;
+                display: none;
+                width: 100%;
+            }
+        }
+    }
+    > li {
+        margin-right: -5px;
+        &:first-child {
+            border-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    ul {
+        margin: 0;
+        list-style-type: none;
+    }
+    &.collapsed li {
+        display: block;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        width: 100%;
+        a {
+            display: block;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        .sub-toggle {
+            height: 40px;
+        }
+        > ul {
+            position: static;
+            display: none;
+        }
+    }
+}
+
+.collapse-button {
+    display: none;
+}
+.navbar-collapse {
+    max-height: 100%;
+}
+
+.navbar-toggle .icon-bar {
+    position: relative;
+    transition: all 200ms ease-in-out;
+}
+
+.navbar-toggle.active span:nth-of-type(2) {
+    top: 7px;
+    opacity: 0;
+    transform: rotate(45deg);
+}
+
+.navbar-toggle.active span:nth-of-type(3) {
+    transform: rotate(45deg);
+}
+
+.navbar-toggle.active span:nth-of-type(4) {
+    top: -7px;
+    transform: rotate(-45deg);
+}
+
+/* Tablet ****************************************************************/
+@include tablet {
+    ul.slimmenu {
+        display: flex !important;
+        justify-content: space-around;
+        align-content: stretch;
+        text-align: center;
+        li {
+            a {
+                padding: 12px 24px 12px 8px;
+            }
+            > ul {
+                text-align: left;
+                padding-left: 0;
+                > li ul {
+                    left: 82%;
+                }
+            }
+            ul.sub-menu {
+                width: 220px;
+                background: rgba($green, .9);
+                li a {
+                    width: 220px;
+                    &:hover {
+                        background: rgba(#2E2828, .7);
+                    }
+                }
+                li:first-child:before {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 10px solid $green;
+                    top: -10px;
+                    left: 25px; 
+                }
+            }
+            .sub-toggle {
+                display: none;
+            }
+            a:hover {
+                background: rgba($green, 1);
+            }
+        } //li
+    } //end slimmenu
+
+    #site-navigation {
+        position: absolute;
+        @include admin-sticky-fix;
+        width: 100vw;
+        top: 82px;
+        z-index: 9;
+        margin-left: -15px;
+        background: rgba(#2E2828, .7);
+        .has-submenu {
+            position: relative;
+        }
+        .has-submenu:after {
+            content:"\f107";
+            font-family: 'fontAwesome';
+            color: white;
+            position: absolute;
+            top: 12px;
+            right: 5px;
+        }
+    }
+   
+    .menu-main-menu-container {
+        padding-bottom: 0;
+    }
+
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+    #site-navigation {
+        left: 15px;
+        top: 104px;
+    }
+
+} //end tablet-landscape
+
+/* Desktop **************************************************************/
+@include desktop {
+    ul.slimmenu li a {
+        font-size: 20px;
+    }
+    ul.slimmenu li ul.sub-menu, ul.slimmenu li ul.sub-menu li a{
+        width: 260px;
+    }
+} //end desktop

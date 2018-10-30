@@ -1,0 +1,60 @@
+/* Text Card
+****************************************************/
+
+.textcard {
+    &__content {
+        padding: 0 0 15px;
+    }
+    &__sub-title {
+        font: bold 24px/32px $font-header;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    &__sub-title-link {
+        display: block;
+        padding: 10px;
+        border: 6px solid white;
+        margin-bottom: 10px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+/* Tablet ***************************************************************/
+@include tablet {
+    .textcard {
+        &__content {
+            display: flex;
+            max-width: 980px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        &__sub-title-link, &__excerpt {
+            flex: 0 0 calc(50% - 15px);
+        }
+        &__sub-title-link {
+            @include popout-hover();
+            padding: 20px;
+            &:hover {
+                text-shadow:0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            }
+        }
+        &__sub-title {
+            font: bold 36px/43px $font-header;
+        }
+    }
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+    .textcard {
+        &__sub-title {
+            font: bold 48px/57px $font-header;
+        }
+    }
+} //end tablet-landscape
+
+/* Desktop ******************************************************/
+@include desktop {
+} //end desktop

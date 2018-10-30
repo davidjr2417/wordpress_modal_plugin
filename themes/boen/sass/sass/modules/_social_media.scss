@@ -1,0 +1,90 @@
+/* Social Media
+****************************************************/
+%icon {
+    @include font-smoothing;
+    display: inline-block;
+    padding: 8px 6px;
+    width: 38px;
+    height: 38px;
+    border: 2px solid rgba(white, .5);
+    border-radius: 50%;
+    color: rgba(white, .5);
+    cursor: pointer;
+    transition: all ease-out .25s;
+    line-height: 0;
+    margin: 0 6px;
+    &:hover, &:focus {
+        border-color: rgba(white, 1);
+        color: rgba(white, 1);
+        text-decoration: none;
+    }
+    &:after {
+        font-size: 26px;
+        font-family: 'fontAwesome';
+        position: relative;
+        top: 9px;
+    }
+}
+
+
+.social-media {
+  float: left;
+  margin-bottom: 20px;
+}
+
+[class^='icon'] {
+    @extend %icon;
+}
+
+[alt='facebook'] {
+    padding: 8px 0 0 8px;
+    margin-left: 0;
+    margin-right: 6px;
+    &:after {
+        content: '\f09a';
+    }
+}
+[alt='twitter']:after {
+    content: '\f099';
+}
+
+[alt='youtube']:after {
+    content: '\f167';
+}
+
+[alt='get updates'] {
+    font-weight: bold;
+    width: auto;
+    border-radius: 50px;
+    color: white;
+    position: relative;
+    top: 5px;
+    background-color: initial;
+    padding: 16px 15px ;
+    margin: 0;
+
+}
+
+@include tablet {
+  
+  .social-media {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 119px;
+  }
+  
+}
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+  
+  .social-media {
+    top: 26px;
+  }
+  
+} //end tablet-landscape
+
+/* Desktop ******************************************************/
+@include desktop {
+} //end desktop

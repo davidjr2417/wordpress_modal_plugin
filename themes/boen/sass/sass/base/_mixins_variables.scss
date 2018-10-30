@@ -1,0 +1,124 @@
+
+/*
+	= Variables and mixins	
+*******************************************************************************************/
+
+$primary-color: #333;
+$black: #2F2828;
+$darkgrey: #333;
+$green: #59BF6F;
+$red: #E12052;
+$lightgrey: #E5E5E5;
+$lightgreen: #E9EEEB;
+$grey_menu: #E1E1E1;
+$thin: 300;
+$bold: 700;
+$extra-bold: 800;
+$regular: 400;
+$transition: all ease-out .2s;
+
+
+//breakpoints
+$mobile: 320px;
+$tablet-width: 768px;
+$tablet-landscape-width: 992px;
+$desktop-width: 1200px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) {
+        @content;
+    }
+}
+@mixin tablet-landscape {
+    @media (min-width: #{$tablet-landscape-width}) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+@mixin custom-screen-width($custom-width) {
+  @media (min-width: #{$custom-width}) {
+    @content;
+  }
+}
+
+
+//mixins
+@mixin arrow-before() {
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        padding: 4px 8px 5px 11px;
+        border-radius: 50%;
+        background: $green;
+        color: $black;
+        content: '\f105';
+        font-size: 25px;
+        font-family: 'fontAwesome';
+    }
+}
+
+@mixin popout-hover() {
+    @include tablet {
+        transition: $transition;
+        &:hover, &:focus {
+            text-decoration: none;
+            transform: scale(1.02, 1.02);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+    }
+}
+
+@mixin popout-hover-before() {
+    @include tablet {
+        transition: $transition;
+        &:hover:before, &:focus:before {
+            text-decoration: none;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+    }
+}
+
+@mixin inverse() {
+    background-color: $darkgrey;
+    color: white;
+}
+@mixin inverse-text() {
+    @include font-smoothing;
+    color: white;
+}
+
+@mixin font-smoothing() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin btn-hover() {
+    box-shadow: 0 2px 4px 0 rgba(black, .5);
+    transition: all  ease-out .2s;
+    &:hover {
+        box-shadow: 2px 4px 16px 0 rgba(black, .4);
+        color: white;
+        -webkit-transform: scale(1.05);
+    }
+}
+
+// admin + sticky
+@mixin admin-sticky-fix( $offset: 0 ) {
+  $narrow-offset: 46px;
+  $wide-offset: 32px;
+  @if $offset != 0 and type-of($offset) == 'number' {
+    $narrow-offset: $narrow-offset + $offset;
+    $wide-offset: $wide-offset + $offset;
+  }
+  .admin-bar & {
+    margin-top: $narrow-offset;
+    @media screen and (min-width: 783px) {
+      margin-top: $wide-offset;
+    }
+  }
+}

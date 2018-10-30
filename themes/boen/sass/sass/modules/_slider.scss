@@ -1,0 +1,120 @@
+/* Slider
+****************************************************/
+.container--relative {
+    @extend .container;
+    position: relative;
+    margin: 0 auto;
+}
+.home .flexslider {
+    margin-bottom: 0;
+}
+.slide-caption {
+    position: relative;
+    z-index: 999;
+    padding: 0 15px 20px;
+    background: $black;
+    h4 {
+        @include arrow-before;
+        position: relative;
+        padding-left: 40px;
+        font: normal 14px/19px $font-header;
+    }
+}
+.flex-control-paging {
+    display: none;
+}
+.flex-direction-nav a {
+    top: 44%;
+}
+.flex-direction-nav a.flex-prev:before, .flex-direction-nav a.flex-next:before {
+    @include font-smoothing;
+    color: rgba(white, .3);
+    text-shadow: 0 0 0;
+}
+.flex-direction-nav a.flex-next:before {
+    content: '\f105';
+    font-family: 'fontAwesome';
+}
+.flex-direction-nav a.flex-prev:before {
+    content: '\f104';
+    font-family: 'fontAwesome';
+}
+.flexslider {
+    border: 0;
+}
+.img-container {
+    position: relative;
+    display: block;
+    &:after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(-180deg,rgba(47,40,40,0) 60%,#2E2727 100%);
+        content: ' ';
+    }
+}
+
+/* Tablet ***************************************************************/
+@include tablet {
+    .slide-caption {
+        position: absolute;
+        z-index: 999;
+    }
+    .img-container {
+        &:after {
+            background-image: linear-gradient(-180deg,rgba(47,40,40,0) 50%,rgba(47,40,40,.61) 80%,#2E2727 100%);
+        }
+    }
+    .slide-caption {
+        background: initial;
+        h3 {
+            margin-left: 8px;
+            text-align: left;
+            font-size: 24px;
+            line-height: 32px;
+            top: 4px;
+            position: relative;
+        }
+        h4 {
+            @include popout-hover-before();
+            font-size: 18px;
+            line-height: 24px;
+            padding-left: 48px;
+            &:before {
+                transition: all ease-out .25s;
+                border: 2px solid rgba(0,0,0,0);
+                padding: 2px 7px 3px 12px;
+                top: 4px;
+            }
+            &:hover:before {
+                background: initial;
+                color: $green;
+                border: 2px solid $green;   
+            }
+        }
+    }
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+} //end tablet-landscape
+
+/* Desktop ******************************************************/
+@include desktop {
+    .slide-caption {
+        h3 {
+            font-size: 48px;
+            top: -5px;
+        }
+        h4 {
+            font-size: 24px;
+            line-height: 34px;
+            padding-left: 65px;
+            &:before {
+                padding: 1px 8px 3px 15px;
+                font-size: 44px;
+            }
+        }
+    }
+} //end desktop

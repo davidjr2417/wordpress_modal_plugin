@@ -1,0 +1,126 @@
+/*
+	= Interior pages 	
+*******************************************************************************************/
+.lower {
+    padding-bottom: 50px;
+    > div:first-child {
+      padding-top: 40px;
+      min-height: 500px;
+    }
+}
+
+.breadcrumbs {
+    @include font-smoothing;
+    font-size: 11px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 100px 0 0 15px;
+    padding: 0 15px;
+    list-style: none;
+    background: rgba($black, .7);
+    z-index: 1;
+    color: $green;
+    li {
+        float: left;
+        margin-right: 15px;
+        font-size: 10px;
+        line-height: 18px;
+        a {
+          font-size: 11px;
+        }
+    }
+    .separator {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    * { 
+        color: $green;
+    }
+    a:hover {
+        color: white;
+    }
+}
+.leaders {
+  small {
+    color: $green;
+    margin-left: 15px;
+  }
+}
+.lower {
+  h3.entry-title {
+    a {
+      font-weight: $bold;
+    }
+  }
+}
+.archive .lower .row {
+  margin-bottom: 2em; 
+}
+// Resources
+.featured-resources {
+  margin: 1em 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $lightgreen ;
+  > div {
+    margin-bottom: 1em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.other-resources {
+  h3.entry-title {
+    margin: 0 0 5px 0;
+  }
+  .post-categories {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: $font-header;
+    text-transform: uppercase;
+    a {
+      font-size: 0.8em; 
+      color: black;
+      &:hover {
+        color: darken($grey_menu,20);
+      }
+    }
+  }
+}
+
+// Events
+#tribe-events-header {
+  .custom-event-links {
+    display: none;
+  }
+}
+
+#tribe-events-footer {
+  .custom-event-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+
+
+/* Tablet ****************************************************************/
+@include tablet {
+  
+  // Our Network
+  .leaders {
+    h4 {
+      margin-top: 0;
+    }
+  }
+  .lower {
+    h3.entry-title a {
+      font-size: 1.2em;
+      line-height: 120%;
+    }
+  }
+  
+}

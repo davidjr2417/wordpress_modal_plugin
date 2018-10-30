@@ -1,0 +1,46 @@
+/*
+	= Header	
+*******************************************************************************************/
+.navbar-wrapper {
+    position: static;
+    border-bottom: 4px solid $green;
+}
+.navbar-wrapper .container {
+    padding: 0;
+}
+.navbar {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.left {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.header-background {
+    background-color: $black;
+}
+.logo--main {
+    max-width: 200px;
+    margin-top: 17px;
+}
+/* Tablet ****************************************************************/
+@include tablet {
+    .logo--main {
+        max-width: 227px;
+    }  
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+    .logo--main {
+        max-width: 284px;
+        margin-top: 22px;
+        margin-bottom: 5px;
+    }
+} //end tablet-landscape
+
+/* Desktop **************************************************************/
+@include desktop {
+} //end desktop

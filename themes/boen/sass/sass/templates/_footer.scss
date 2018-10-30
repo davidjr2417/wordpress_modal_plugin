@@ -1,0 +1,66 @@
+/*
+	= Footer
+*******************************************************************************************/
+
+%small-footer-text {
+	font-size: 12px;
+	color: #4A4A4A;
+	text-transform: capitalize;
+}
+footer .menu {
+	padding-left: 0;
+}
+
+.footer-menu .menu {
+    margin: 20px auto 8px;
+    li {
+        font-size: 16px;
+        text-transform: uppercase;
+        display: block;
+        font-weight: bold;
+        padding: 3px 0;
+        list-style: none;
+    }
+
+}
+.site-info-menu .menu {
+	li {
+		display: inline-block;
+		padding: 0 8px;
+	}
+	a{
+		@extend %small-footer-text;
+	}
+}
+.footer--section, footer {
+    background: $lightgreen;
+    text-align: center;
+}
+.footer-address {
+	@extend %small-footer-text;
+	display: block;
+	margin-bottom: 30px;
+}
+/* Tablet ****************************************************************/
+@include tablet {
+	.footer-menu .menu { 
+		display: flex;
+		justify-content: space-around;
+		width: 80%;
+		max-width: 760px;
+	}
+	.footer__social-media-item {
+		padding: 30px 0;
+	}
+} //end tablet
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+	.footer-menu .menu {
+		margin-bottom: 15px;
+	}
+} //end tablet-landscape
+
+/* Desktop **************************************************************/
+@include desktop {
+} //end desktop

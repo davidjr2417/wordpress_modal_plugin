@@ -1,0 +1,62 @@
+/* Share this 
+****************************************************/
+.share-buttons {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2.5em;
+    li {
+        display: inline-block;
+        font-size: 12px;
+        position: relative;
+        top: 12px;
+    }
+    li:first-child {
+        top: 17px;
+        color: darken($grey_menu, 20);
+    }
+}
+
+[alt^='share'] {
+    background: $green;
+    border: 0;
+    color: white;
+    text-decoration: none;
+    margin: 0;
+    width: 28px;
+    height: 28px;
+    margin-top: -10px;
+    &:after {
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        top:6px;
+    }
+    &:hover {
+      background: black;
+      box-shadow: none;
+    }
+
+}
+[alt='share on facebook']:after {
+    content: '\f09a';
+}
+[alt='share on twitter']:after {
+    content: '\f099';
+}
+[alt='share on email']:after {
+    content:'\f0e0';
+}
+
+
+
+/* Tablet ******************************************************/
+@include tablet{
+} //end tablet-landscape
+
+/* Tablet-landscape ******************************************************/
+@include tablet-landscape {
+} //end tablet-landscape
+
+/* Desktop ******************************************************/
+@include desktop {
+} //end desktop

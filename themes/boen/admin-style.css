@@ -1,0 +1,28 @@
+.plugins tr[data-slug^="design-action"].active td, .plugins tr[data-slug^="design-action"].active th {
+	background-color:#fafafa;
+}
+.plugins tr[data-slug^="design-action"].active th {
+	border-left-color:black;
+}
+.plugins tr[data-slug^="design-action"].active a {
+	color:#32373c;
+}
+/* Make Trusted Plugins stand out */
+.plugins tr[data-slug="design-action-trusted-plugins"].active th {
+	border-left-color:red;
+	animation: blink-animation 1s steps(5, start) infinite;
+	-webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+	border-left-color:transparent;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+	border-left-color:transparent;
+  }
+}
+.plugins tr[data-slug="design-action-trusted-plugins"] strong {
+	color:red;
+}
